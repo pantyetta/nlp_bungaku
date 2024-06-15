@@ -1,5 +1,16 @@
 # NLP Bungaku
 
+## Required
+need download raw data
+```
+/raw/author******/****.txt
+```
+run `delRawDecoration.py`. remove annotation and more...  
+generate `/dataset` direcrory.
+```
+/dataset/author****/****.txt
+```
+
 
 ## dataset
 https://www.aozora.gr.jp/index.html
