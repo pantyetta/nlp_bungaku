@@ -30,11 +30,13 @@ def del_decoration(text) -> str:
     pattern_bottom = r'底本：.*'
     pattern_rubi = r'《[^》]*》\n?'
     pattern_chu = r'［＃[^］]*］\n?'
+    pattern_kurikaeshi = r'／[＼］]*＼\n?'
     pattern_rubiStart = r'｜'
     text = re.sub(pattern_header, '', text, flags=re.DOTALL | re.MULTILINE)
     text = re.sub(pattern_bottom, '', text, flags=re.DOTALL | re.MULTILINE)
     text = re.sub(pattern_rubi, '', text, flags=re.MULTILINE)
     text = re.sub(pattern_chu, '', text, flags= re.MULTILINE)
+    text = re.sub(pattern_kurikaeshi, '', text, flags= re.MULTILINE)
     text = re.sub(pattern_rubiStart, '', text)
     result = text.strip('\n')
     return result
