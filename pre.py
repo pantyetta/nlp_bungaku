@@ -9,10 +9,13 @@ import gensim
 from gensim import models
 import pandas as pd
 
+df = pd.DataFrame()
 dataset_file_name = './corpus.csv'
+pre_dataset_file_name = './pre_corpus.csv'
 texts, label_ids = [], []
+pre_texts, pre_label_ids = [], []
 
-# データの読み込み
+# baseデータの読み込み
 with open(dataset_file_name, mode='r', encoding='utf-8') as f:
     data = list(csv.reader(f))
 
@@ -21,9 +24,26 @@ for counter, row in enumerate(data):
     word_list = row[1].split(' ')
     label_ids.append(label)
     texts.append(word_list)
+    
+    
+# pre データ読み込み
+with open(pre_dataset_file_name, mode='r', encoding='utf-8') as f:
+    data = list(csv.reader(f))
+
+for counter, row in enumerate(data):
+    label = row[0]
+    word_list = row[1].split(' ')
+    pre_label_ids.append(label)
+    pre_texts.append(word_list)
 
 # データの分割
-X_train_texts, X_test_texts, y_train, y_test = train_test_split(texts, label_ids, test_size=.2, random_state=42)
+# X_train_texts, X_test_texts, y_train, y_test = train_test_split(texts, label_ids, test_size=0, random_state=42)
+X_train_texts = texts
+y_train = label_ids
+
+X_test_texts = pre_texts
+y_test = pre_label_ids
+
 
 # 辞書の作成
 dictionary = gensim.corpora.Dictionary(X_train_texts)

@@ -42,6 +42,8 @@ line_dict = []
 print(stop_df['label'])
 folders = scan_folder(folder_path)
 for i, folder in enumerate(folders):
+    if folder == 'pre':
+        continue
     word_count = {}
     files = scan_file(f'{folder_path}/{folder}')
     for file in files:
