@@ -36,7 +36,7 @@ def skip(word) -> bool:
 
 tagger = MeCab.Tagger()
 
-author_dict = {'akutagawa': [], 'mori': [], 'dazai': []}
+author_dict = {'akutagawa': [], 'mori': [], 'dazai': [], 'nakajima': [], 'natume': []}
 line_dict = []
 
 print(stop_df['label'])

@@ -58,5 +58,5 @@ print('\n====================== total ========================\n\n', collections
 
 print(classification_report(y_test, y_pred, digits=5))
 cm = confusion_matrix(y_test, y_pred)
-df_cm = pd.DataFrame(cm, index=['Actual A', 'Actual B', 'actual C'], columns=['pre A', 'pre B', 'pre C'])
+df_cm = pd.DataFrame(cm, index=['Actual A', 'Actual B', 'actual C', 'Actual D', 'actual E'], columns=['pre A', 'pre B', 'pre C', 'pre D', 'pre E'])
 print(df_cm)
