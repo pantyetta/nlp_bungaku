@@ -77,6 +77,4 @@ y_pred = clf.predict(X_test_tfidf)
 print('\n====================== total ========================\n\n', collections.Counter(y_pred), '\n\n=====================================================\n')
 
 print(classification_report(y_test, y_pred, digits=5))
-cm = confusion_matrix(y_test, y_pred)
-df_cm = pd.DataFrame(cm, index=['Actual A', 'Actual B', 'actual C'], columns=['pre A', 'pre B', 'pre C'])
-print(df_cm)
+print(confusion_matrix(y_test, y_pred))

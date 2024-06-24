@@ -60,10 +60,8 @@ for i, folder in enumerate(folders):
                 line_dict = []
             
             node = node.next
-    word_count = sorted(word_count.items(), key=lambda x:x[1], reverse=True)
-    author_word_count[folder] = word_count
 
-print(author_word_count)
+print(author_dict)
 
 with open('./corpus.csv', mode='w', encoding='utf-8') as f:
     writer = csv.writer(f, lineterminator='\n')

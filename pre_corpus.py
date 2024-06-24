@@ -47,8 +47,6 @@ for file in files:
             line_dict = []
         
         node = node.next
-word_count = sorted(word_count.items(), key=lambda x:x[1], reverse=True)
-author_word_count['pre'] = word_count
 
 print(author_dict)
 
